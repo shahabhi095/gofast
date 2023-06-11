@@ -1,0 +1,80 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+.MainContainer{
+  display: flex;
+  justify-content: space-around;
+}
+.inputContainer{
+  background-image: url("https://thumbs.dreamstime.com/b/flight-ticket-booking-concept-blurred-city-abstract-lights-background-flight-ticket-booking-concept-blurred-city-lights-173050269.jpg");
+  background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  width: 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+   margin: auto; 
+   height: 600px;
+
+}
+.heading{
+  color: #881337;
+}
+.inputContainer input{
+    width: 50%;
+    font-size: 20px;
+    padding: 5px auto;
+    border-radius: 5px;
+    border: 2px solid blue;
+}
+
+.BookButton{
+color: white;
+font-size: 16px;
+padding: 6px 20px;
+border-radius: 8px;
+background-color: #ee5431;
+border: none;
+}
+.TickeContainer{
+  display: flex;
+  row-gap: 20px;
+  justify-content: space-between;
+
+  margin: auto;
+
+}
+
+.BookingCounter{
+  width: 75%;
+  position: static;
+  margin: auto;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(228, 65, 65) 0px 0px 0px 3px;
+  background-color: white;
+  padding: 20px;
+  height: 50%;
+  margin-top: 20%;
+}
+.container{
+   background-image: url("https://static.punjabkesari.in/multimedia/2022_6image_14_03_527685268airtravle.jpg");
+  background-repeat: no-repeat;
+   background-size: 100% 100%;
+    background-position: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+    width: 50%;
+   height: 600px;
+  background-color: #94A3B8;
+
+}
+.Reset{
+  background-color:#ee5431;
+  color: white;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
