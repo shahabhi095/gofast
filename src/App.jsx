@@ -5,7 +5,7 @@ import DisplayTickets from "./component/displayTickets";
 
 function App() {
   const [ticketStatus, setTicketStatus] = useState([])
- const [userInput, setUserInput] = useState(0)
+ const [userInput, setUserInput] = useState(null)
   const [message, setMeassage] = useState("");
 
 //getting ticket details 
