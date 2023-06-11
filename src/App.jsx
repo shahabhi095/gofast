@@ -7,13 +7,16 @@ function App() {
   const [ticketStatus, setTicketStatus] = useState([])
  const [userInput, setUserInput] = useState(null)
   const [message, setMeassage] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
 
 //getting ticket details 
 const GetData = async()=>{
+  setIsLoading(true)
 try {
   let getAllseats = await axios.get(
     `https://godaddy.onrender.com/ticket`
   );
+  setIsLoading(false);
   setTicketStatus(getAllseats.data);
 } catch (err) {
   console.log(err);
@@ -25,8 +28,10 @@ try {
   },[message])
 //reset coach
 const HandleReset= async()=>{
+   setIsLoading(true);
 try {
   let res = await axios.get(`https://godaddy.onrender.com/reset`);
+    setIsLoading(false);
    setMeassage(res.data.seat);
 } catch (err) {
   console.log(err);
@@ -40,7 +45,6 @@ try {
 
 
 const handleSubmit=async()=>{
-  console.log(userInput);
     try {
       let res = await axios.post(
         `https://godaddy.onrender.com/ticket`,
@@ -86,18 +90,29 @@ const handleSubmit=async()=>{
 
         <div className="container">
           <h1 className="heading">Check seats availability </h1>
-          {ticketStatus &&
-            ticketStatus.map((item, i) => (
-              <div className="TickeContainer" key={100 * i}>
-                {item.map((el, j) => (
-                  <DisplayTickets
-                    key={1000 * j}
-                    el={el}
-                    seatNum={i * 7 + j + 1}
-                  />
+          {isLoading === true ? (
+            <div className="loader">
+              <img
+                src="https://i.gifer.com/origin/d3/d3f472b06590a25cb4372ff289d81711_w200.gif"
+                alt=""
+              />
+            </div>
+          ) : (
+            <div>
+              {ticketStatus &&
+                ticketStatus.map((item, i) => (
+                  <div className="TickeContainer" key={100 * i}>
+                    {item.map((el, j) => (
+                      <DisplayTickets
+                        key={1000 * j}
+                        el={el}
+                        seatNum={i * 7 + j + 1}
+                      />
+                    ))}
+                  </div>
                 ))}
-              </div>
-            ))}
+            </div>
+          )}
         </div>
       </div>
     </>

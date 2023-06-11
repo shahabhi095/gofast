@@ -20,7 +20,7 @@
 
 }
 .heading{
-  color: #881337;
+  color: #6b0824e7;
 }
 .inputContainer input{
     width: 50%;
@@ -77,4 +77,19 @@ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(228, 65, 65) 0px 0px 0px 3px;
   border-radius: 10px;
   font-size: 24px;
   font-weight: 600;
+}
+
+.loader{
+  color: white;
+  width: 15%;
+  margin: auto;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  left: 65%;
+ 
+}
+.loader img{
+  width: 100%;
+   border-radius: 50%;
 }
